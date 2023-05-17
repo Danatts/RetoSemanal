@@ -1,6 +1,6 @@
-pub mod reto00;
-pub mod reto01;
+mod reto01;
 
 fn main() {
-    reto01::hacker_language();
+    let output: String = reto01::hacker_language("Hi, my name is Daniel Arteta");
+    println!("{}", output)
 }
