@@ -1,3 +1,7 @@
+// Escribe un programa que reciba un texto y transforme lenguaje natural a
+// "lenguaje hacker" (conocido realmente como "leet" o "1337"). Este lenguaje
+// se caracteriza por sustituir caracteres alfanuméricos.
+
 use std::collections::HashMap;
 
 pub fn leet_translator(word: &str) -> String {
