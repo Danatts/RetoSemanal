@@ -1,6 +1,5 @@
-mod hacker_language;
+mod prime_fibonacci_even;
 
 fn main() {
-    let output = hacker_language::leet_translator("Hello, I am Daniel");
-    println!("{}", output)
+    prime_fibonacci_even::check_all(89);
 }
