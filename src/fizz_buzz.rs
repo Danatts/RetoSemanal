@@ -5,6 +5,13 @@
 // - Múltiplos de 5 por la palabra "buzz".
 // - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
 
+// main.rs 
+// mod fizz_buzz;
+// 
+// fn main() {
+//     fizz_buzz::print_fizz_buzz();
+// }
+
 pub fn print_fizz_buzz() -> () {
     for num in 1..=100 {
         match num {
