@@ -1,11 +1,29 @@
-mod password_generator;
+mod rock_paper_scissors;
 
 fn main() {
-    println!("{}", password_generator::password_generator(8, false, false, false));
-    println!("{}", password_generator::password_generator(10, true, false, false));
-    println!("{}", password_generator::password_generator(12, false, true, false));
-    println!("{}", password_generator::password_generator(14, false, false, true));
-    println!("{}", password_generator::password_generator(16, true, false, true));
-    println!("{}", password_generator::password_generator(9, true, true, false));
-    println!("{}", password_generator::password_generator(11, true, true, true));
+    println!(
+        "{:?}",
+        rock_paper_scissors::rock_paper_scissors([['r', 'r'].to_vec()].to_vec())
+    );
+    println!(
+        "{:?}",
+        rock_paper_scissors::rock_paper_scissors([['r', 's'].to_vec()].to_vec())
+    );
+    println!(
+        "{:?}",
+        rock_paper_scissors::rock_paper_scissors([['s', 'r'].to_vec()].to_vec())
+    );
+    println!(
+        "{:?}",
+        rock_paper_scissors::rock_paper_scissors(
+            [
+                ['r', 'r'].to_vec(),
+                ['l', 's'].to_vec(),
+                ['s', 'r'].to_vec(),
+                ['p', 'o'].to_vec(),
+                ['o', 'l'].to_vec(),
+            ]
+            .to_vec()
+        )
+    );
 }
