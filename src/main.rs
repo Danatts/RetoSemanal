@@ -1,11 +1,9 @@
+// mod fizz_buzz;
+mod hacker_language;
+// mod tennis_match;
+// mod password_generator;
+mod prime_fibonacci_even;
+mod rock_paper_scissors;
 mod text_type;
 
-fn main() {
-    println!("{}", text_type::heterogram("abcdefg"));
-    println!("{}", text_type::heterogram("aabcdefg"));
-    println!("{}", text_type::isogram("abcdefg"));
-    println!("{}", text_type::isogram("aabbcc"));
-    println!("{}", text_type::isogram("aaabbcc"));
-    println!("{}", text_type::pangram("abcdefghijklmnopqrstuvwxyz"));
-    println!("{}", text_type::pangram("aaabbcc"));
-}
+fn main() {}

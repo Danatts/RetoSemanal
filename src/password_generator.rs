@@ -20,7 +20,7 @@
 
 use rand::{thread_rng, Rng};
 
-pub fn password_generator(len: u8, cap: bool, num: bool, symb: bool) -> String {
+fn password_generator(len: u8, cap: bool, num: bool, symb: bool) -> String {
     let mut valid_chars: Vec<char> = "abcdefghijklmnopqrstuvwxyz".chars().collect::<Vec<char>>();
     if cap {
         valid_chars.append(&mut "ABCDEFGHIJKLMNOPQRSTUVWXYZ".chars().collect::<Vec<char>>());

@@ -9,7 +9,7 @@
 
 use std::collections::HashMap;
 
-pub fn rock_paper_scissors(games: Vec<Vec<char>>) -> String {
+fn rock_paper_scissors(games: Vec<Vec<char>>) -> String {
     let mut rules: HashMap<char, [char; 2]> = HashMap::new();
     rules.insert('r', ['s', 'l']);
     rules.insert('p', ['r', 'o']);
@@ -43,6 +43,50 @@ pub fn rock_paper_scissors(games: Vec<Vec<char>>) -> String {
         x if x > scores.player2_score => "Player1".to_string(),
         x if x < scores.player2_score => "Player2".to_string(),
         _ => "Draw".to_string(),
-        
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn is_tie() {
+        let result = rock_paper_scissors(vec![vec!['r', 'r']]);
+        assert_eq!(result, "Draw");
+    }
+
+    #[test]
+    fn p1_one() {
+        let result = rock_paper_scissors(vec![vec!['r', 's']]);
+        assert_eq!(result, "Player1");
+    }
+
+    #[test]
+    fn p1_two() {
+        let result = rock_paper_scissors(vec![vec!['s', 'p']]);
+        assert_eq!(result, "Player1");
+    }
+
+    #[test]
+    fn is_tie_two() {
+        let result = rock_paper_scissors(vec![
+            vec!['r', 'r'],
+            vec!['r', 'r'],
+            vec!['r', 'r'],
+            vec!['r', 'r'],
+        ]);
+        assert_eq!(result, "Draw");
+    }
+
+    #[test]
+    fn p1_three() {
+        let result = rock_paper_scissors(vec![
+            vec!['o', 'r'],
+            vec!['s', 'p'],
+            vec!['p', 'p'],
+            vec!['l', 'o'],
+        ]);
+        assert_eq!(result, "Player1");
     }
 }

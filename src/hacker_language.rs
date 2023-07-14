@@ -2,14 +2,6 @@
 // "lenguaje hacker" (conocido realmente como "leet" o "1337"). Este lenguaje
 // se caracteriza por sustituir caracteres alfanuméricos.
 
-// main.rs 
-// mod hacker_language;
-// 
-// fn main() {
-//     let output = hacker_language::leet_translator("Hello, I am Daniel");
-//     println!("{}", output)
-// }
-
 use std::collections::HashMap;
 
 pub fn leet_translator(word: &str) -> String {
@@ -51,4 +43,27 @@ pub fn leet_translator(word: &str) -> String {
     }
 
     translation
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn greetings() {
+        let leet_word = leet_translator("Hello, world");
+        assert_eq!(leet_word, "#3110, VV0121)")
+    }
+
+    #[test]
+    fn introduction() {
+        let leet_word = leet_translator("My name is Daniel");
+        assert_eq!(leet_word, "^^j ^/4^^3 15 )4^/131")
+    }
+
+    #[test]
+    fn where_come_from() {
+        let leet_word = leet_translator("I live in Colombia");
+        assert_eq!(leet_word, "1 11|/3 1^/ [010^^814")
+    }
 }
