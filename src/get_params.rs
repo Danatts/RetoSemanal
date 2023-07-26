@@ -8,17 +8,15 @@ pub fn get_params_from_url(url: &str) -> Result<HashMap<&str, &str>, &str> {
         return Err("No URL provided");
     }
 
-    let params: Vec<&str> = url.split('?').collect();
-
-    if params.len() == 1 {
+    if !url.contains('?') {
         return Err("No params provided");
     }
 
     let mut result: HashMap<&str, &str> = HashMap::new();
 
-    let params: Vec<&str> = params[1].split('&').collect();
+    let params: Vec<&str> = url.split('?').collect();
 
-    for param in params {
+    for param in params[1].split('&') {
         let values: Vec<&str> = param.split('=').collect();
         result.insert(values[0], values[1]);
     }
