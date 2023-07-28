@@ -1,22 +1,12 @@
-// Escribe un programa que sea capaz de generar contraseñas de forma aleatoria.
-// Podrás configurar generar contraseñas con los siguientes parámetros:
-// - Longitud: Entre 8 y 16.
-// - Con o sin letras mayúsculas.
-// - Con o sin números.
-// - Con o sin símbolos.
-// (Pudiendo combinar todos estos parámetros entre ellos)
-
-// mod password_generator;
-// 
-// fn main() {
-//     println!("{}", password_generator::password_generator(8, false, false, false));
-//     println!("{}", password_generator::password_generator(10, true, false, false));
-//     println!("{}", password_generator::password_generator(12, false, true, false));
-//     println!("{}", password_generator::password_generator(14, false, false, true));
-//     println!("{}", password_generator::password_generator(16, true, false, true));
-//     println!("{}", password_generator::password_generator(9, true, true, false));
-//     println!("{}", password_generator::password_generator(11, true, true, true));
-// }
+/* 
+* Escribe un programa que sea capaz de generar contraseñas de forma aleatoria.
+* Podrás configurar generar contraseñas con los siguientes parámetros:
+* - Longitud: Entre 8 y 16.
+* - Con o sin letras mayúsculas.
+* - Con o sin números.
+* - Con o sin símbolos.
+* (Pudiendo combinar todos estos parámetros entre ellos)
+*/
 
 use rand::{thread_rng, Rng};
 

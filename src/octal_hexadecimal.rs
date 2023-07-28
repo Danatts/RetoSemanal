@@ -1,5 +1,6 @@
-// Crea una función que reciba un número decimal y lo trasforme a Octal
-// y Hexadecimal.
+/*
+* Crea una función que reciba un número decimal y lo trasforme a Octal y Hexadecimal.
+*/
 
 pub fn to_octal(dec: u32) -> String {
     const OCT_BASE: [char; 8] = ['0', '1', '2', '3', '4', '5', '6', '7'];

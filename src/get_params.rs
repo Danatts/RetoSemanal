@@ -1,5 +1,7 @@
-// Dada una URL con parámetros, crea una función que obtenga sus valores.
-// No se pueden usar operaciones del lenguaje que realicen esta tarea directamente.
+/*
+* Dada una URL con parámetros, crea una función que obtenga sus valores.
+* No se pueden usar operaciones del lenguaje que realicen esta tarea directamente.
+*/
 
 use std::collections::HashMap;
 
