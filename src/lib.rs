@@ -8,5 +8,5 @@
 // pub mod text_type;
 // pub mod get_params;
 // pub mod octal_hexadecimal;
-pub mod guess_word;
-
+// pub mod guess_word;
+pub mod stairs;
