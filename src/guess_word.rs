@@ -33,30 +33,37 @@ pub fn guess_word_main() {
     let mut guess = String::new();
 
     loop {
+        // Check if the attempts reached 0
         if attempts <= 0 {
             println!("You have no more attempts, you lost.\nThe word was: {word}");
             break;
         }
 
+        // Check if there is no more hidden indexes
         if hidden_indexes.len() == 0 {
             println!("You win! The word is: {word}");
             break;
         }
 
+        // Print the world and remaining attempts
         println!(
             "The word is: {}\nAttempts remaining: {attempts}",
             hide_word_by_index(&word_as_vec, &hidden_indexes)
         );
 
-        // Get user input
+        // Clear the variable where user input is introduced
         guess.clear();
+
+        // Get user input
         println!("Your input:");
         io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read line.");
         guess = guess.trim().to_string();
 
+        // Check if the input is the whole word
         if guess.len() == word.len() {
+            // Check if the input is exactly the word to guess
             if guess.eq(&word) {
                 println!("You win!: The word is {word}");
                 break;
@@ -65,21 +72,28 @@ pub fn guess_word_main() {
                 attempts -= 1;
                 continue;
             }
+        // Check if the input is just one character
         } else if guess.len() == 1 {
+            // Take the character that the user entered
             let guess = guess.chars().next().unwrap();
+
             let mut founded_indexes: Vec<u8> = Vec::new();
 
+            // Check if the character is in the list of hidden characters and push it to founded
+            // list
             for i in &hidden_indexes {
-                if word_as_vec[*i as usize] == guess {
+                if guess == word_as_vec[*i as usize] {
                     founded_indexes.push(*i);
                 }
             }
 
+            // If founded list is empty means that the word is wrong
             if founded_indexes.len() == 0 {
                 println!("Wrong letter.");
                 attempts -= 1;
                 continue;
             } else {
+                // Remove the elements from hidden list if they match with founded list
                 for i in &founded_indexes {
                     let index = hidden_indexes.iter().position(|x| x == i).unwrap();
                     hidden_indexes.remove(index);
