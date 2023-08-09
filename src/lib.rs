@@ -9,4 +9,4 @@
 // pub mod get_params;
 // pub mod octal_hexadecimal;
 // pub mod guess_word;
-pub mod stairs;
+// pub mod stairs;

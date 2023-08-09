@@ -14,7 +14,7 @@
 
 use fakeit::words;
 use rand::{thread_rng, Rng};
-use std::{io, mem};
+use std::io;
 
 pub fn guess_word_main() {
     let mut attempts = 4;
@@ -124,7 +124,7 @@ fn hide_indexes(word: &Vec<char>) -> Vec<u8> {
 fn hide_word_by_index(word: &Vec<char>, indexes: &Vec<u8>) -> String {
     let mut word_as_vec = word.to_owned();
     for i in indexes {
-        let _ = mem::replace(&mut word_as_vec[*i as usize], '_');
+        let _ = word_as_vec[*i as usize] = '_';
     }
     word_as_vec.iter().collect::<String>()
 }
