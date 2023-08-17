@@ -10,3 +10,4 @@
 // pub mod octal_hexadecimal;
 // pub mod guess_word;
 // pub mod stairs;
+pub mod text_analysis;
